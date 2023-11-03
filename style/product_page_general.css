@@ -1,0 +1,210 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4d4d4d !important;
+}
+/* Colors:
+Background: #4d4d4d
+Box background: #666666
+Text: #c5def9
+Text (Header): #f4bf1b
+Text (Link): #0098ff
+Text (Highlight): #9aafe3
+Buttons: #4169E1
+*/
+
+/*Styles for top bar*/
+.header {
+    width: calc(100vw - 30px);
+    height: 100px;
+    background-color: #666666;
+    margin: 0 6px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    padding: 10px;
+    height: 80px;
+    float: left;
+}
+
+.siteName {
+    padding-top: 10px;
+    float: left;
+}
+
+.spacer {
+    float: left;
+    width: calc(100% - 200px - 80px - 50px - 40px);
+    height: 30px;
+    background-color: red;
+}
+
+.hamburger {
+    float: left;
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.hamburger a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+}
+
+.hamburger a:hover {
+    color: tomato;
+}
+
+.hamburger input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #cdcdcd;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease;
+}
+
+.hamburger span:first-child {
+    transform-origin: 0% 0%;
+}
+
+.hamburger span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+.hamburger input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.hamburger input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+.hamburgerInner {
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: -100% 0%;
+    transform: translate(50%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.hamburgerInner li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+.hamburger input:checked ~ ul {
+    transform: none;
+}
+
+/*Styles for product display*/
+.container {
+    width: 80%;
+    height: 50vh;
+    margin: 0 auto;
+    background-color: #666666;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 500px;
+}
+
+.left {
+    width: 50%;
+    float: left;
+    align-content: center;
+}
+
+.img {
+    width: 90%;
+    max-width: 600px;
+}
+
+.right {
+    width: 50%;
+    float: left;
+}
+
+h1 {
+    color: #f4bf1b;
+    margin-bottom: 20px;
+}
+
+.priceBox {
+    float: left;
+}
+
+.price {
+    font-size: 24px;
+    color: #9aafe3;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.reviewLink {
+    color: #0098ff;
+    padding-left: 10px;
+    padding-top: 15px;
+    float: left;
+}
+
+.description {
+    color: #c5def9;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.add-to-cart {
+    float: left;
+    background-color: #4169E1;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
